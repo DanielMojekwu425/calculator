@@ -20,5 +20,11 @@ pipeline {
                    bat "./mvnw test"
                }
           }
+          stage("Code coverage") {
+               steps {
+                    bat "./mvnw verify"
+                    bat "./mvnw test jacoco:check"
+           }
+          }
      }
 }

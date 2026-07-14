@@ -26,5 +26,10 @@ pipeline {
                     bat "./mvnw test jacoco:check"
            }
           }
+          stage("Static code analysis") {
+               steps {
+                    sh "./gradlew checkstyleMain"
+           }
+          }
      }
 }
